@@ -7,9 +7,9 @@ Este proyecto desarrolla un microservicio que consume una API externa para obten
 El servicio realiza lo siguiente:
 
 1. Consume una API externa para obtener una lista de usuarios.
-2. Exponemos esta lista mediante un endpoint en el microservicio.
+2. Expone esta lista mediante un endpoint en el microservicio.
 3. Usa caché para almacenar los usuarios y evitar llamadas repetidas a la API externa.
-4. Maneja las excepciones de forma centralizada
+4. Maneja las excepciones de forma centralizada.
 
 ## Requisitos
 
