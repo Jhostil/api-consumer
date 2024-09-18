@@ -11,7 +11,6 @@ import org.mockito.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,6 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Clase test para el servicio de usuarios
+ * Utiliza Mockito para simular la respuesta del cliente REST y verificar el comportamiento del método getUsers().
+ */
 @SpringBootTest
 public class UserTest {
 
@@ -28,11 +31,18 @@ public class UserTest {
     @InjectMocks
     private UserService userService;
 
+    /**
+     * Inicializa los mocks antes de cada prueba.
+     */
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }
 
+    /**
+     * Prueba el método getUsers() para verificar que retorna la lista de usuarios correcta.
+     * Simula la respuesta de la API externa y valida que el resultado del servicio coincida con la respuesta simulada.
+     */
     @Test
     public void testGetUsers(){
 
