@@ -1,6 +1,5 @@
-package com.prueba.api_consumer.exeption;
+package com.prueba.api_consumer.exception;
 
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -9,16 +8,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClientException;
-import org.springframework.web.servlet.View;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    private final View error;
-
-    public GlobalExceptionHandler(View error) {
-        this.error = error;
-    }
 
     @ExceptionHandler(RestClientException.class)
     public ResponseEntity<String> handleRestClientException (){
@@ -41,12 +34,11 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(message, statusCode);
     }
-
+    @ExceptionHandler({Exception.class, RuntimeException.class})
     public ResponseEntity<String> handleGenericException(Exception exception){
 
         String message = ("Ocurrión un error inesperado: " + exception.getMessage());
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
 
 }
