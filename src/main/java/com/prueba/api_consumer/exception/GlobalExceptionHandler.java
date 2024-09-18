@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler({Exception.class, RuntimeException.class})
     public ResponseEntity<String> handleGenericException(Exception exception){
 
-        String message = ("Ocurrión un error inesperado: " + exception.getMessage());
+        String message = ("Ocurrión un error: " + exception.getMessage());
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

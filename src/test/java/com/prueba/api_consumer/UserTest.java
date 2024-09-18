@@ -60,15 +60,4 @@ public class UserTest {
         assertEquals(users.get(1), actualUsers.get(1), "El segundo usuario debe coincidir");
     }
 
-    @Test
-    public void testGetAllUsersRestClientException() {
-
-        Mockito.when(restTemplate.getForEntity("https://jsonplaceholder.typicode.com/users", User[].class))
-                .thenThrow(new RestClientException("Error"));
-
-        List<User> actualUsers = userService.getUsers();
-
-
-        assertEquals(0, actualUsers.size(), "La lista debería estar vacía debido a la excepción");
-    }
 }

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
         info = @Info(
-                title = "Aplicacion para consumir API externa",
+                title = "Aplicacion para consumir API externa de usuarios",
                 description = "Aplicación que consume una API de usuarios y los expone mediante un endpoint"
         )
 )
