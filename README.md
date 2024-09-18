@@ -49,7 +49,7 @@ El servicio realiza lo siguiente:
     http://localhost:8080/api/users
     ```
 
-2. **Respuesta esperada:**
+2. **Ejemplo de respuesta esperada:**
 
     ```json
     [
